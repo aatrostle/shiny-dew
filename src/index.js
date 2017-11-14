@@ -7,14 +7,14 @@ const mountNode = document.getElementById('root');
 
 class App extends React.Component {
   render() {
-    return React.createElement(
-      "div",
-      null,
-      React.createElement(HelloMessage, {name: 'Aaron'}),
-      React.createElement(HelloMessage, {name: 'John'}),
-      React.createElement(HelloMessage, {name: 'Jane'})
+    return (
+      <div>
+        <HelloMessage name='Aaron' />
+        <HelloMessage name='John' />
+        <HelloMessage name='Jane' />
+      </div>
     );
   }
 }
 
-ReactDOM.render(React.createElement(App), mountNode);
+ReactDOM.render(<App />, mountNode);

@@ -2,7 +2,11 @@ import React from 'react';
 
 class HelloMessage extends React.Component {
   render() {
-    return React.createElement("div", null, "Hello ", this.props.name);
+    return (
+      <div>
+        {`Hello ${this.props.name}`}
+      </div>
+    );
   }
 }
 
