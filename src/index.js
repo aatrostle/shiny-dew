@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import HelloMessage from './HelloMessage';
+
 const mountNode = document.getElementById('root');
 
-class HelloMessage extends React.Component {
+class App extends React.Component {
   render() {
-    return React.createElement("div", null, "Hello ", this.props.name);
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(HelloMessage, {name: 'Aaron'}),
+      React.createElement(HelloMessage, {name: 'John'}),
+      React.createElement(HelloMessage, {name: 'Jane'})
+    );
   }
 }
 
-ReactDOM.render(React.createElement(HelloMessage, { name: "Jane" }), mountNode);
+ReactDOM.render(React.createElement(App), mountNode);
